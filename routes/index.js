@@ -59,7 +59,11 @@ router.post('/register', checkNotAuthenticated ,async(req,res) => {
 
 
 router.delete('/logout', (req,res) => {
-    req.logOut();
+    req.logOut(function(err){
+        if(err){
+            console.log(err)
+        }
+    });
     res.redirect('/login');
 }
 )

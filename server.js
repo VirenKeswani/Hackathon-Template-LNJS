@@ -31,6 +31,7 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(methodOverride('_method'));
 //use bcrypt
 
 const indexRouter = require('./routes/index.js');
